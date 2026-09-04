@@ -1,0 +1,26 @@
+apiVersion: v1
+entries:
+  litellm-helm:
+  - annotations:
+      org.opencontainers.image.source: https://github.com/BerriAI/litellm
+      org.opencontainers.image.url: https://docs.litellm.ai/
+    apiVersion: v2
+    appVersion: 1.99.0
+    created: "2026-09-04T18:41:36.361415674-05:00"
+    dependencies:
+    - condition: db.deployStandalone
+      name: postgresql
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 14.3.1
+    - condition: redis.enabled
+      name: redis
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 18.19.1
+    description: Call all LLM APIs using the OpenAI format
+    digest: 08199feaa123d881a4fa3bc21767586eed3fb282c6af704ee514f910cef9ce43
+    name: litellm-helm
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/datacurso/helm-litellm_chart/main/litellm-helm-1.99.0.tgz
+    version: 1.99.0
+generated: "2026-09-04T18:41:36.353847897-05:00"
